@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College Database Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login Page -->
+  <div class="login-container" id="loginPage">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Main Dashboard -->
+  <div class="container" id="mainApp" style="display: none;">
+    <h1>College Database Management</h1>
+
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="Search by name, location..." />
+      <select id="typeFilter">
+        <option value="all">All Types</option>
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+        <option value="community">Community</option>
+      </select>
+      <select id="locationFilter">
+        <option value="all">All Locations</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Delhi">Delhi</option>
+      </select>
+      <button onclick="showAddForm()">+ Add New College</button>
+    </div>
+
+    <div class="college-list" id="collegeList"></div>
+
+    <!-- Modal Form -->
+    <div class="modal" id="collegeModal">
+      <div class="modal-content">
+        <h2>Add New College</h2>
+        <form id="collegeForm">
+          <input type="text" id="collegeName" placeholder="College Name" required />
+          <input type="text" id="location" placeholder="Location (City, State)" required />
+          <input type="number" id="year" placeholder="Established Year" required />
+          <input type="url" id="website" placeholder="Website" />
+          <select id="collegeType" required>
+            <option value="">Select Type</option>
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+            <option value="community">Community</option>
+          </select>
+          <textarea id="description" placeholder="Description"></textarea>
+
+          <div class="buttons">
+            <button type="submit">Save College</button>
+            <button type="button" onclick="closeModal()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
