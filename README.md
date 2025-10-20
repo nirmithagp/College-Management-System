@@ -62,7 +62,7 @@ pip install -r requirements.txt
 4. Configure Environment
 Create a .env file:
 
-DATABASE_URL=postgresql://username:password@localhost:5432/db_name
+DATABASE_URL=postgresql://username:password@localhost:5432/db_name [replace username and password]
 SECRET_KEY=your_secret_key
 
 ▶️ Running the App
